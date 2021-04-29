@@ -1,0 +1,5 @@
+*~
+*.bak
+.ipynb_checkpoints
+.tox
+.DS_Store
