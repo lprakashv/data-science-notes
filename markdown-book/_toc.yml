@@ -1,0 +1,22 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+parts:
+  - caption: Numpy
+    chapters:
+      - file: numpy_intro
+  - caption: Feature Engineering
+    chapters:
+      - file: feature_engineering
+  - caption: Recommendation System
+    chapters:
+      - file: recommendation
+  - caption: NLP
+    chapters:
+      - file: nlp
+      - file: advanced_nlp
+  - caption: Deep Learning
+    chapters:
+      - file: deep_learning_apps
