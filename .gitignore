@@ -4,3 +4,5 @@
 .tox
 .DS_Store
 .vscode
+.venv*/
+_build/
