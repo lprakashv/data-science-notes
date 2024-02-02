@@ -1,0 +1,44 @@
+name: deploy-notes-book
+
+# Only run this when the master branch changes
+on:
+  push:
+    branches:
+    - master
+    # If your git repository has the Jupyter Book within some-subfolder next to
+    # unrelated files, you can make this run only if a file within that specific
+    # folder has been modified.
+    #
+    # paths:
+    # - some-subfolder/**
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install pipenv && python3 -m pipenv install
+    
+    - name: Convert Jupyter nootebooks to Markdown
+      run: |
+        sh ./jnb_convert_script.sh
+    
+    - name: Build the book
+      run: |
+        python3 -m pipenv run jupyter-book build ./markdown-book/
+    # Push the book's static files to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./markdown-book/_build/html
