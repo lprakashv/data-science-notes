@@ -6,3 +6,4 @@
 .vscode
 .venv*/
 _build/
+/book/

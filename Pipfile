@@ -8,7 +8,6 @@ jupyterlab = "*"
 nbconvert = "*"
 jupyter = "*"
 pandoc = "*"
-jupyter-book = "*"
 
 [dev-packages]
 

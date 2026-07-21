@@ -1,0 +1,14 @@
+[book]
+title = "Lalit's AI / ML Notebook"
+authors = ["Lalit Prakash Vatsal"]
+description = "Notes and examples for data science, machine learning, and AI."
+language = "en"
+src = "markdown-book"
+
+[build]
+build-dir = "book"
+
+[output.html]
+git-repository-url = "https://github.com/lprakashv/data-science-notes"
+edit-url-template = "https://github.com/lprakashv/data-science-notes/edit/main/markdown-book/{path}"
+site-url = "/data-science-notes/"
