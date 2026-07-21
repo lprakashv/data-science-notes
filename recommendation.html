@@ -1,0 +1,3124 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Recommendation - Lalit&#x27;s AI / ML Notebook</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Notes and examples for data science, machine learning, and AI.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-0eced60d.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-1492484a.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Lalit&#x27;s AI / ML Notebook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/lprakashv/data-science-notes" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/lprakashv/data-science-notes/edit/main/markdown-book/markdown-book/recommendation.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="recommendation"><a class="header" href="#recommendation">Recommendation</a></h1>
+<p>Purpose: to find and recommend items that a user is most likely to be interested in.</p>
+<h3 id="examples-of-recommendation-engines"><a class="header" href="#examples-of-recommendation-engines">Examples of Recommendation Engines:</a></h3>
+<ol>
+<li>Product: Amazon, Etsy</li>
+<li>Movie: Netflix</li>
+<li>Music: Apple Music, Spotify etc</li>
+<li>Social connections: Facebook, Linkedin, Instagram</li>
+</ol>
+<h2 id="simple-appoaches-to-recommender-systems"><a class="header" href="#simple-appoaches-to-recommender-systems">Simple Appoaches to Recommender Systems:</a></h2>
+<h3 id="1-popularity-based-recommenders"><a class="header" href="#1-popularity-based-recommenders">1. POPULARITY-BASED RECOMMENDERS</a></h3>
+<p><strong>Based on simple copunt statistics</strong> (numer of ratings given to an item)</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">user</th><th style="text-align: center">place</th><th style="text-align: center">rating</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">user A</td><td style="text-align: center">place 1</td><td style="text-align: center">10</td></tr>
+<tr><td style="text-align: center">user B</td><td style="text-align: center">place 1</td><td style="text-align: center">8</td></tr>
+<tr><td style="text-align: center">user C</td><td style="text-align: center">place 2</td><td style="text-align: center">8</td></tr>
+<tr><td style="text-align: center">user D</td><td style="text-align: center">place 2</td><td style="text-align: center">7</td></tr>
+<tr><td style="text-align: center">user E</td><td style="text-align: center">place 1</td><td style="text-align: center">8</td></tr>
+<tr><td style="text-align: center">user F</td><td style="text-align: center">place 1</td><td style="text-align: center">7</td></tr>
+<tr><td style="text-align: center">user G</td><td style="text-align: center">place 1</td><td style="text-align: center">10</td></tr>
+<tr><td style="text-align: center"></td><td style="text-align: center"><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://cdnjs.cloudflare.com/ajax/libs/fontisto/3.0.4/icons/directional/arrow-down.png" alt=""><span class="img-wrapper"><img src="https://cdnjs.cloudflare.com/ajax/libs/fontisto/3.0.4/icons/directional/arrow-down.png" alt=""></span></label></td><td style="text-align: center"></td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">place</th><th style="text-align: center">rating count</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">place 1</td><td style="text-align: center">5</td></tr>
+<tr><td style="text-align: center">place 2</td><td style="text-align: center">2</td></tr>
+</tbody>
+</table>
+</div>
+<p>Fun facts on <strong>Popularity based recommenders</strong>:</p>
+<ul>
+<li>rely on purchase history data</li>
+<li>are often used by online news sites like Bloomberg</li>
+<li>cannot produce personalized result</li>
+</ul>
+<pre><code class="language-python">import pandas as pd
+import numpy as np
+</code></pre>
+<pre><code class="language-python">ratings = pd.read_csv('rating_final.csv')
+ratings.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>userID</th>
+      <th>placeID</th>
+      <th>rating</th>
+      <th>food_rating</th>
+      <th>service_rating</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>U1077</td>
+      <td>135085</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>U1077</td>
+      <td>135038</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>U1077</td>
+      <td>132825</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>U1077</td>
+      <td>135060</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>U1068</td>
+      <td>135104</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">cuisines = pd.read_csv('chefmozcuisine.csv')
+cuisines.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>placeID</th>
+      <th>Rcuisine</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>135110</td>
+      <td>Spanish</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>135109</td>
+      <td>Italian</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>135107</td>
+      <td>Latin_American</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>135106</td>
+      <td>Mexican</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>135105</td>
+      <td>Fast_Food</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python"># how many people have given ratings to a particuar 'place'
+ratings_counts = pd.DataFrame(ratings.groupby('placeID')['rating'].count())
+ratings_counts.sort_values('rating', ascending=False).head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>135085</th>
+      <td>36</td>
+    </tr>
+
+    
+<tr>
+      <th>132825</th>
+      <td>32</td>
+    </tr>
+
+    
+<tr>
+      <th>135032</th>
+      <td>28</td>
+    </tr>
+
+    
+<tr>
+      <th>135052</th>
+      <td>25</td>
+    </tr>
+
+    
+<tr>
+      <th>132834</th>
+      <td>25</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">cuisine_popularity = pd.merge(ratings_count, cuisines, on='placeID')
+cuisine_popularity.sort_values('rating', ascending=False).head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>placeID</th>
+      <th>rating</th>
+      <th>Rcuisine</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>105</th>
+      <td>135085</td>
+      <td>36</td>
+      <td>Fast_Food</td>
+    </tr>
+
+    
+<tr>
+      <th>28</th>
+      <td>132825</td>
+      <td>32</td>
+      <td>Mexican</td>
+    </tr>
+
+    
+<tr>
+      <th>71</th>
+      <td>135032</td>
+      <td>28</td>
+      <td>Cafeteria</td>
+    </tr>
+
+    
+<tr>
+      <th>72</th>
+      <td>135032</td>
+      <td>28</td>
+      <td>Contemporary</td>
+    </tr>
+
+    
+<tr>
+      <th>86</th>
+      <td>135052</td>
+      <td>25</td>
+      <td>Bar_Pub_Brewery</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">cuisine_popularity['Rcuisine'].describe()
+</code></pre>
+<pre><code>count         112
+unique         23
+top       Mexican
+freq           28
+Name: Rcuisine, dtype: object
+</code></pre>
+<pre><code class="language-python">cuisines['Rcuisine'].describe()
+</code></pre>
+<pre><code>count         916
+unique         59
+top       Mexican
+freq          239
+Name: Rcuisine, dtype: object
+</code></pre>
+<h3 id="2-correlation-based-recommender-systems"><a class="header" href="#2-correlation-based-recommender-systems">2. CORRELATION BASED RECOMMENDER SYSTEMS</a></h3>
+<p><strong>Pearson’s correlation coefficient (r) - “Pearson’s r”</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>r</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td><em>r = 1</em></td><td>Strong positive <em>linear</em> relationship</td></tr>
+<tr><td><em>r = 0</em></td><td>Not linearly correlated</td></tr>
+<tr><td><em>r = -1</em></td><td>Strong negative <em>linear</em> relationship</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="item-based-similarity"><a class="header" href="#item-based-similarity">Item based similarity:</a></h4>
+<pre><code>Recommend an item based on how well it correlates with other items with respect to user ratings
+</code></pre>
+<pre><code class="language-python">ratings = pd.read_csv('rating_final.csv')
+cuisines = pd.read_csv('chefmozcuisine.csv')
+geodata = pd.read_csv('geoplaces2.csv')
+</code></pre>
+<pre><code class="language-python">geodata.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>placeID</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>the_geom_meter</th>
+      <th>name</th>
+      <th>address</th>
+      <th>city</th>
+      <th>state</th>
+      <th>country</th>
+      <th>fax</th>
+      <th>...</th>
+      <th>alcohol</th>
+      <th>smoking_area</th>
+      <th>dress_code</th>
+      <th>accessibility</th>
+      <th>price</th>
+      <th>url</th>
+      <th>Rambience</th>
+      <th>franchise</th>
+      <th>area</th>
+      <th>other_services</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>134999</td>
+      <td>18.915421</td>
+      <td>-99.184871</td>
+      <td>0101000020957F000088568DE356715AC138C0A525FC46...</td>
+      <td>Kiku Cuernavaca</td>
+      <td>Revolucion</td>
+      <td>Cuernavaca</td>
+      <td>Morelos</td>
+      <td>Mexico</td>
+      <td>?</td>
+      <td>...</td>
+      <td>No_Alcohol_Served</td>
+      <td>none</td>
+      <td>informal</td>
+      <td>no_accessibility</td>
+      <td>medium</td>
+      <td>kikucuernavaca.com.mx</td>
+      <td>familiar</td>
+      <td>f</td>
+      <td>closed</td>
+      <td>none</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>132825</td>
+      <td>22.147392</td>
+      <td>-100.983092</td>
+      <td>0101000020957F00001AD016568C4858C1243261274BA5...</td>
+      <td>puesto de tacos</td>
+      <td>esquina santos degollado y leon guzman</td>
+      <td>s.l.p.</td>
+      <td>s.l.p.</td>
+      <td>mexico</td>
+      <td>?</td>
+      <td>...</td>
+      <td>No_Alcohol_Served</td>
+      <td>none</td>
+      <td>informal</td>
+      <td>completely</td>
+      <td>low</td>
+      <td>?</td>
+      <td>familiar</td>
+      <td>f</td>
+      <td>open</td>
+      <td>none</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>135106</td>
+      <td>22.149709</td>
+      <td>-100.976093</td>
+      <td>0101000020957F0000649D6F21634858C119AE9BF528A3...</td>
+      <td>El Rinc�n de San Francisco</td>
+      <td>Universidad 169</td>
+      <td>San Luis Potosi</td>
+      <td>San Luis Potosi</td>
+      <td>Mexico</td>
+      <td>?</td>
+      <td>...</td>
+      <td>Wine-Beer</td>
+      <td>only at bar</td>
+      <td>informal</td>
+      <td>partially</td>
+      <td>medium</td>
+      <td>?</td>
+      <td>familiar</td>
+      <td>f</td>
+      <td>open</td>
+      <td>none</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>132667</td>
+      <td>23.752697</td>
+      <td>-99.163359</td>
+      <td>0101000020957F00005D67BCDDED8157C1222A2DC8D84D...</td>
+      <td>little pizza Emilio Portes Gil</td>
+      <td>calle emilio portes gil</td>
+      <td>victoria</td>
+      <td>tamaulipas</td>
+      <td>?</td>
+      <td>?</td>
+      <td>...</td>
+      <td>No_Alcohol_Served</td>
+      <td>none</td>
+      <td>informal</td>
+      <td>completely</td>
+      <td>low</td>
+      <td>?</td>
+      <td>familiar</td>
+      <td>t</td>
+      <td>closed</td>
+      <td>none</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>132613</td>
+      <td>23.752903</td>
+      <td>-99.165076</td>
+      <td>0101000020957F00008EBA2D06DC8157C194E03B7B504E...</td>
+      <td>carnitas_mata</td>
+      <td>lic. Emilio portes gil</td>
+      <td>victoria</td>
+      <td>Tamaulipas</td>
+      <td>Mexico</td>
+      <td>?</td>
+      <td>...</td>
+      <td>No_Alcohol_Served</td>
+      <td>permitted</td>
+      <td>informal</td>
+      <td>completely</td>
+      <td>medium</td>
+      <td>?</td>
+      <td>familiar</td>
+      <td>t</td>
+      <td>closed</td>
+      <td>none</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p>5 rows × 21 columns</p>
+
+</div>
+
+<pre><code class="language-python">places = geodata[['placeID', 'name']]
+places.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>placeID</th>
+      <th>name</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>134999</td>
+      <td>Kiku Cuernavaca</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>132825</td>
+      <td>puesto de tacos</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>135106</td>
+      <td>El Rinc�n de San Francisco</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>132667</td>
+      <td>little pizza Emilio Portes Gil</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>132613</td>
+      <td>carnitas_mata</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python"># Average Rating based ranking w.r.t. places
+place_avg_ratings = pd.DataFrame(ratings.groupby('placeID')['rating'].mean())
+place_avg_ratings.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>132560</th>
+      <td>0.50</td>
+    </tr>
+
+    
+<tr>
+      <th>132561</th>
+      <td>0.75</td>
+    </tr>
+
+    
+<tr>
+      <th>132564</th>
+      <td>1.25</td>
+    </tr>
+
+    
+<tr>
+      <th>132572</th>
+      <td>1.00</td>
+    </tr>
+
+    
+<tr>
+      <th>132583</th>
+      <td>1.00</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">place_avg_ratings['rating_count'] = pd.DataFrame(ratings.groupby('placeID')['rating'].count())
+place_avg_ratings.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+      <th>rating_count</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>132560</th>
+      <td>0.50</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>132561</th>
+      <td>0.75</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>132564</th>
+      <td>1.25</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>132572</th>
+      <td>1.00</td>
+      <td>15</td>
+    </tr>
+
+    
+<tr>
+      <th>132583</th>
+      <td>1.00</td>
+      <td>4</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">place_avg_ratings.describe()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+      <th>rating_count</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>count</th>
+      <td>130.000000</td>
+      <td>130.000000</td>
+    </tr>
+
+    
+<tr>
+      <th>mean</th>
+      <td>1.179622</td>
+      <td>8.930769</td>
+    </tr>
+
+    
+<tr>
+      <th>std</th>
+      <td>0.349354</td>
+      <td>6.124279</td>
+    </tr>
+
+    
+<tr>
+      <th>min</th>
+      <td>0.250000</td>
+      <td>3.000000</td>
+    </tr>
+
+    
+<tr>
+      <th>25%</th>
+      <td>1.000000</td>
+      <td>5.000000</td>
+    </tr>
+
+    
+<tr>
+      <th>50%</th>
+      <td>1.181818</td>
+      <td>7.000000</td>
+    </tr>
+
+    
+<tr>
+      <th>75%</th>
+      <td>1.400000</td>
+      <td>11.000000</td>
+    </tr>
+
+    
+<tr>
+      <th>max</th>
+      <td>2.000000</td>
+      <td>36.000000</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">place_avg_ratings.sort_values('rating_count', ascending=False).head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>rating</th>
+      <th>rating_count</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>135085</th>
+      <td>1.333333</td>
+      <td>36</td>
+    </tr>
+
+    
+<tr>
+      <th>132825</th>
+      <td>1.281250</td>
+      <td>32</td>
+    </tr>
+
+    
+<tr>
+      <th>135032</th>
+      <td>1.178571</td>
+      <td>28</td>
+    </tr>
+
+    
+<tr>
+      <th>135052</th>
+      <td>1.280000</td>
+      <td>25</td>
+    </tr>
+
+    
+<tr>
+      <th>132834</th>
+      <td>1.000000</td>
+      <td>25</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">ratings_cross_table = pd.pivot_table(data=ratings, values='rating', index='userID', columns='placeID')
+ratings_cross_table.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th>placeID</th>
+      <th>132560</th>
+      <th>132561</th>
+      <th>132564</th>
+      <th>132572</th>
+      <th>132583</th>
+      <th>132584</th>
+      <th>132594</th>
+      <th>132608</th>
+      <th>132609</th>
+      <th>132613</th>
+      <th>...</th>
+      <th>135080</th>
+      <th>135081</th>
+      <th>135082</th>
+      <th>135085</th>
+      <th>135086</th>
+      <th>135088</th>
+      <th>135104</th>
+      <th>135106</th>
+      <th>135108</th>
+      <th>135109</th>
+    </tr>
+
+    
+<tr>
+      <th>userID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>U1001</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+
+    
+<tr>
+      <th>U1002</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+
+    
+<tr>
+      <th>U1003</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+
+    
+<tr>
+      <th>U1004</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+
+    
+<tr>
+      <th>U1005</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p>5 rows × 130 columns</p>
+
+</div>
+
+<pre><code class="language-python">most_popular_place = place_avg_ratings.iloc[place_avg_ratings['rating_count'].argmax()].name
+print("most popular place: {}".format(most_popular_place))
+
+most_popular_cuisine = cuisines.loc[cuisines['placeID'] == most_popular_place]['Rcuisine'].name
+print("most popular cuisine: {}".format(most_popular_cuisine))
+
+most_popular_place_ratings = ratings_cross_table[most_popular_place]
+most_popular_place_ratings[most_popular_place_ratings.notnull()]
+</code></pre>
+<pre><code>most popular place: 135085
+most popular cuisine: Rcuisine
+
+
+
+
+
+userID
+U1001    0.0
+U1002    1.0
+U1007    1.0
+U1013    1.0
+U1016    2.0
+U1027    1.0
+U1029    1.0
+U1032    1.0
+U1033    2.0
+U1036    2.0
+U1045    2.0
+U1046    1.0
+U1049    0.0
+U1056    2.0
+U1059    2.0
+U1062    0.0
+U1077    2.0
+U1081    1.0
+U1084    2.0
+U1086    2.0
+U1089    1.0
+U1090    2.0
+U1092    0.0
+U1098    1.0
+U1104    2.0
+U1106    2.0
+U1108    1.0
+U1109    2.0
+U1113    1.0
+U1116    2.0
+U1120    0.0
+U1122    2.0
+U1132    2.0
+U1134    2.0
+U1135    0.0
+U1137    2.0
+Name: 135085, dtype: float64
+</code></pre>
+<pre><code class="language-python"># Evaluating similarity based on "correlation":
+
+similar_to_most_popular = ratings_cross_table.corrwith(most_popular_place_ratings)
+
+corr_most_popular = pd.DataFrame(similar_to_most_popular, columns=['PearsonsR'])
+corr_most_popular.dropna(inplace=True)
+corr_most_popular.head()
+</code></pre>
+<pre><code>/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/function_base.py:2634: RuntimeWarning: Degrees of freedom &lt;= 0 for slice
+  c = cov(x, y, rowvar, dtype=dtype)
+/opt/anaconda3/lib/python3.8/site-packages/numpy/lib/function_base.py:2493: RuntimeWarning: divide by zero encountered in true_divide
+  c *= np.true_divide(1, fact)
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>PearsonsR</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>132572</th>
+      <td>-0.428571</td>
+    </tr>
+
+    
+<tr>
+      <th>132723</th>
+      <td>0.301511</td>
+    </tr>
+
+    
+<tr>
+      <th>132754</th>
+      <td>0.930261</td>
+    </tr>
+
+    
+<tr>
+      <th>132825</th>
+      <td>0.700745</td>
+    </tr>
+
+    
+<tr>
+      <th>132834</th>
+      <td>0.814823</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">corr_with_most_pop_ratcnt = corr_most_popular.join(place_avg_ratings['rating_count'])
+corr_with_most_pop_ratcnt.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>PearsonsR</th>
+      <th>rating_count</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>132572</th>
+      <td>-0.428571</td>
+      <td>15</td>
+    </tr>
+
+    
+<tr>
+      <th>132723</th>
+      <td>0.301511</td>
+      <td>12</td>
+    </tr>
+
+    
+<tr>
+      <th>132754</th>
+      <td>0.930261</td>
+      <td>13</td>
+    </tr>
+
+    
+<tr>
+      <th>132825</th>
+      <td>0.700745</td>
+      <td>32</td>
+    </tr>
+
+    
+<tr>
+      <th>132834</th>
+      <td>0.814823</td>
+      <td>25</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">top_10_places_like_most_pop = corr_with_most_pop_ratcnt[corr_with_most_pop_ratcnt['rating_count'] &gt;= 10
+                                                       ].sort_values('PearsonsR', ascending=False
+                                                                    )[:10]
+top_10_places_like_most_pop
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>PearsonsR</th>
+      <th>rating_count</th>
+    </tr>
+
+    
+<tr>
+      <th>placeID</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>135076</th>
+      <td>1.000000</td>
+      <td>13</td>
+    </tr>
+
+    
+<tr>
+      <th>135085</th>
+      <td>1.000000</td>
+      <td>36</td>
+    </tr>
+
+    
+<tr>
+      <th>135066</th>
+      <td>1.000000</td>
+      <td>12</td>
+    </tr>
+
+    
+<tr>
+      <th>132754</th>
+      <td>0.930261</td>
+      <td>13</td>
+    </tr>
+
+    
+<tr>
+      <th>135045</th>
+      <td>0.912871</td>
+      <td>13</td>
+    </tr>
+
+    
+<tr>
+      <th>135062</th>
+      <td>0.898933</td>
+      <td>21</td>
+    </tr>
+
+    
+<tr>
+      <th>135028</th>
+      <td>0.892218</td>
+      <td>15</td>
+    </tr>
+
+    
+<tr>
+      <th>135042</th>
+      <td>0.881409</td>
+      <td>20</td>
+    </tr>
+
+    
+<tr>
+      <th>135046</th>
+      <td>0.867722</td>
+      <td>11</td>
+    </tr>
+
+    
+<tr>
+      <th>132872</th>
+      <td>0.840168</td>
+      <td>12</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">pd.merge(pd.merge(top_10_places_like_most_pop, cuisines, on='placeID'), places, on='placeID')
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>placeID</th>
+      <th>PearsonsR</th>
+      <th>rating_count</th>
+      <th>Rcuisine</th>
+      <th>name</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>135085</td>
+      <td>1.000000</td>
+      <td>36</td>
+      <td>Fast_Food</td>
+      <td>Tortas Locas Hipocampo</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>132754</td>
+      <td>0.930261</td>
+      <td>13</td>
+      <td>Mexican</td>
+      <td>Cabana Huasteca</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>135028</td>
+      <td>0.892218</td>
+      <td>15</td>
+      <td>Mexican</td>
+      <td>La Virreina</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>135042</td>
+      <td>0.881409</td>
+      <td>20</td>
+      <td>Chinese</td>
+      <td>Restaurant Oriental Express</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>135046</td>
+      <td>0.867722</td>
+      <td>11</td>
+      <td>Fast_Food</td>
+      <td>Restaurante El Reyecito</td>
+    </tr>
+
+    
+<tr>
+      <th>5</th>
+      <td>132872</td>
+      <td>0.840168</td>
+      <td>12</td>
+      <td>American</td>
+      <td>Pizzeria Julios</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<h2 id="collaborative-filtering-recommenders"><a class="header" href="#collaborative-filtering-recommenders">Collaborative Filtering Recommenders</a></h2>
+<p><strong>Recommend items based on crowdsourced information about users’ preferences for items</strong>.</p>
+<p>2 approaches:</p>
+<ol>
+<li>
+<p>User based</p>
+<p><em>Based on known user attributes, we know that User B is similar to User D. User D really likes his life insurance policy, so let’s recomment it to Uesr B also.</em></p>
+</li>
+<li>
+<p>Item based</p>
+<p><em>User B and User D both gave high ratings to the cell phone and the cell phone case. Since User A also likes the cell phone, let’s recommend to her the cell phone case also.</em></p>
+</li>
+</ol>
+<p>User attributes can be described as a list of values (possibly boolean).</p>
+<h3 id="classification-based-collaborative-filtering"><a class="header" href="#classification-based-collaborative-filtering">Classification-Based Collaborative Filtering</a></h3>
+<p>Provides personalizarion by accepting:</p>
+<ul>
+<li>user and item attribute data</li>
+<li>purchase history data</li>
+<li>other contextual data</li>
+<li>Gives a Yes/No classification! (Will he/she accept/purchase?)</li>
+</ul>
+<p>Example classification methods:</p>
+<ol>
+<li>Naive Bayes classification</li>
+<li>Logistic regression</li>
+</ol>
+<h4 id="1-logistic-regression-as-classifier"><a class="header" href="#1-logistic-regression-as-classifier">1. Logistic Regression as classifier</a></h4>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+
+from pandas import Series, DataFrame
+from sklearn.linear_model import LogisticRegression
+</code></pre>
+<pre><code class="language-python">bank_full = pd.read_csv('bank_full_w_dummy_vars.csv')
+bank_full.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>job</th>
+      <th>marital</th>
+      <th>education</th>
+      <th>default</th>
+      <th>balance</th>
+      <th>housing</th>
+      <th>loan</th>
+      <th>contact</th>
+      <th>day</th>
+      <th>...</th>
+      <th>job_unknown</th>
+      <th>job_retired</th>
+      <th>job_services</th>
+      <th>job_self_employed</th>
+      <th>job_unemployed</th>
+      <th>job_maid</th>
+      <th>job_student</th>
+      <th>married</th>
+      <th>single</th>
+      <th>divorced</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>58</td>
+      <td>management</td>
+      <td>married</td>
+      <td>tertiary</td>
+      <td>no</td>
+      <td>2143</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>unknown</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>44</td>
+      <td>technician</td>
+      <td>single</td>
+      <td>secondary</td>
+      <td>no</td>
+      <td>29</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>unknown</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>33</td>
+      <td>entrepreneur</td>
+      <td>married</td>
+      <td>secondary</td>
+      <td>no</td>
+      <td>2</td>
+      <td>yes</td>
+      <td>yes</td>
+      <td>unknown</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>47</td>
+      <td>blue-collar</td>
+      <td>married</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>1506</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>unknown</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>33</td>
+      <td>unknown</td>
+      <td>single</td>
+      <td>unknown</td>
+      <td>no</td>
+      <td>1</td>
+      <td>no</td>
+      <td>no</td>
+      <td>unknown</td>
+      <td>5</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<p>5 rows × 37 columns</p>
+
+</div>
+
+<pre><code class="language-python">bank_full.info()
+</code></pre>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 45211 entries, 0 to 45210
+Data columns (total 37 columns):
+ #   Column                        Non-Null Count  Dtype 
+---  ------                        --------------  ----- 
+ 0   age                           45211 non-null  int64 
+ 1   job                           45211 non-null  object
+ 2   marital                       45211 non-null  object
+ 3   education                     45211 non-null  object
+ 4   default                       45211 non-null  object
+ 5   balance                       45211 non-null  int64 
+ 6   housing                       45211 non-null  object
+ 7   loan                          45211 non-null  object
+ 8   contact                       45211 non-null  object
+ 9   day                           45211 non-null  int64 
+ 10  month                         45211 non-null  object
+ 11  duration                      45211 non-null  int64 
+ 12  campaign                      45211 non-null  int64 
+ 13  pdays                         45211 non-null  int64 
+ 14  previous                      45211 non-null  int64 
+ 15  poutcome                      45211 non-null  object
+ 16  y                             45211 non-null  object
+ 17  y_binary                      45211 non-null  int64 
+ 18  housing_loan                  45211 non-null  int64 
+ 19  credit_in_default             45211 non-null  int64 
+ 20  personal_loans                45211 non-null  int64 
+ 21  prev_failed_to_subscribe      45211 non-null  int64 
+ 22  prev_subscribed               45211 non-null  int64 
+ 23  job_management                45211 non-null  int64 
+ 24  job_tech                      45211 non-null  int64 
+ 25  job_entrepreneur              45211 non-null  int64 
+ 26  job_bluecollar                45211 non-null  int64 
+ 27  job_unknown                   45211 non-null  int64 
+ 28  job_retired                   45211 non-null  int64 
+ 29  job_services                  45211 non-null  int64 
+ 30  job_self_employed             45211 non-null  int64 
+ 31  job_unemployed                45211 non-null  int64 
+ 32  job_maid                      45211 non-null  int64 
+ 33  job_student                   45211 non-null  int64 
+ 34  married                       45211 non-null  int64 
+ 35  single                        45211 non-null  int64 
+ 36  divorced                      45211 non-null  int64 
+dtypes: int64(27), object(10)
+memory usage: 12.8+ MB
+</code></pre>
+<pre><code class="language-python">X = bank_full.iloc[:,list(range(18,37))].values
+
+y = bank_full.iloc[:,17].values
+
+print("X shape = {}".format(X.shape))
+print("y shape = {}".format(y.shape))
+</code></pre>
+<pre><code>X shape = (45211, 19)
+y shape = (45211,)
+</code></pre>
+<pre><code class="language-python">log_reg = LogisticRegression()
+log_reg.fit(X, y)
+</code></pre>
+<pre><code>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+</code></pre>
+<pre><code class="language-python">new_user = [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+y_pred = log_reg.predict([new_user])
+y_pred
+</code></pre>
+<pre><code>array([0])
+</code></pre>
+<h4 id="2-model-based-collaborative-filtering"><a class="header" href="#2-model-based-collaborative-filtering">2. Model-based Collaborative filtering</a></h4>
+<h5 id="singular-value-decomposition-svd"><a class="header" href="#singular-value-decomposition-svd">Singular Value Decomposition (SVD)</a></h5>
+<ul>
+<li>A linear algebra method that can decompose utilituy matrix into three compressed matrices.</li>
+<li>Model-based recommender - use these ompressed matrices to make recommendations without having to refer back to the complete data set.</li>
+<li>Latent variables - ingferred, nonobservable variables that are present within, and affect the behavior of a data set.</li>
+</ul>
+<p>$\Large \begin{bmatrix} {}<em>{A} \end{bmatrix} = \begin{bmatrix} {}</em>{u} \end{bmatrix} \times \begin{bmatrix} {}<em>{S} \end{bmatrix} \times \begin{bmatrix} {}</em>{v} \end{bmatrix}$</p>
+<p>$\Large {A} = {u} \times {S} \times {v}$</p>
+<ul>
+<li><strong>A</strong> = Original matrix (utility matrix)</li>
+<li><strong>u</strong> = Left orthogonal matrix - holds important, non-redundant information about users</li>
+<li><strong>v</strong> = Right orthogonal matrix - holds important, non-redundant information on items</li>
+<li><strong>S</strong> = Diagonal matrix - contains all of the information about the decomposition processes performned during the compression</li>
+</ul>
+<p><strong>Building a utility matrix</strong></p>
+<pre><code class="language-python">ratings_crosstab = combined_movies_data.pivot_table(
+    values='rating', 
+    index='user_id',
+    columns='movie_title',
+    fill_value=0)
+
+# shape = (num_users, num_movies)
+</code></pre>
+<p>This will generate cross table with users as the rows (indices) and each movie as the columns, a typical wide matrix.</p>
+<p><strong>Transposing the Matrix</strong></p>
+<pre><code class="language-python">ratings_crosstab.values.T
+
+# shape = (num_movies, num_users)
+</code></pre>
+<p>This will transpose the matrix, rows interchange with columns.</p>
+<p><strong>Decomposing the Matrix</strong></p>
+<pre><code class="language-python">SVD = TruncatedSVD(n_components=12, random_state=17)
+
+resultant_matrix = SVD.fit_transform(X)
+
+# shape = (num_movies, n_components=12)
+</code></pre>
+<p><strong>Generating a Correlation Matrix</strong></p>
+<pre><code class="language-python">corr_mat = np.corrcoef(resultant_matrix)
+
+# shape = (num_movies, num_movies)
+</code></pre>
+<p><strong>Isolating top movie from the correlation matrix</strong></p>
+<pre><code class="language-python">movie_names = rating_crosstab.columns
+movies_list = list(movie_names)
+
+top_movie = movies_lisst.index('&lt;Top movie title (9999)&gt;')
+
+corr_top_movie = corr_mat[top_movie]
+corr_top_movie.shape
+
+# shape = (num_movies,)
+</code></pre>
+<p><strong>Recommending a Highly Correlated Movie</strong></p>
+<pre><code class="language-python">list(movie_names[
+    (corr_top_movie &lt; 1.0) &amp; (corr_top_movie &gt; 0.9)
+])
+
+# list of highly correlated movie w.r.t. 'Top movie'
+</code></pre>
+<h2 id="machine-learning-based-recommenders"><a class="header" href="#machine-learning-based-recommenders">Machine Learning based Recommenders</a></h2>
+<h3 id="content-based-recommender-systems"><a class="header" href="#content-based-recommender-systems">Content-based recommender systems</a></h3>
+<p><strong>Content-based recommenders recomend items based on similarities between features.</strong></p>
+<p><em>Example: A user who loves Miami might also love Austin, based on the similarities between temperature. const of living and Wi-Fi speeds at both places.</em></p>
+<h4 id="k-nearest-neighbor-algorithm"><a class="header" href="#k-nearest-neighbor-algorithm">K-nearest neighbor algorithm</a></h4>
+<ul>
+<li>Unsupervised classifier</li>
+<li>Also known as a memory-based system</li>
+<li>Memorizes instances and then recommends item (a single instance) based on how quantitatively similar it is to a new, incoming instance.</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>I want to buy a car that gets 25 MPG, and has a 4.7 L engine with 425 HP.</p>
+</blockquote>
+<p>Solution is to find <strong>“1”</strong> car closest to the specification provided in cartesian distance.</p>
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+
+import sklearn
+from sklearn.neighbors import NearestNeighbors
+</code></pre>
+<pre><code class="language-python">cars = pd.read_csv('mtcars.csv')
+cars.columns = ['car_names', 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear', 'carb']
+cars.head()
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>car_names</th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>Mazda RX4</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.620</td>
+      <td>16.46</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>Mazda RX4 Wag</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.875</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>Datsun 710</td>
+      <td>22.8</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>3.85</td>
+      <td>2.320</td>
+      <td>18.61</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>Hornet 4 Drive</td>
+      <td>21.4</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.08</td>
+      <td>3.215</td>
+      <td>19.44</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>Hornet Sportabout</td>
+      <td>18.7</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.15</td>
+      <td>3.440</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">specifications_needed = [15, 300, 160, 3.2]
+# mpg, disp, hp, wt
+
+X = cars[['mpg', 'disp', 'hp', 'wt']]
+X[0:5]
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>wt</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>21.0</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>2.620</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>21.0</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>2.875</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>22.8</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>2.320</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>21.4</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.215</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>18.7</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.440</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">nearest_neighbors = NearestNeighbors(n_neighbors=1).fit(X)
+
+y, neighbor_coord = nearest_neighbors.kneighbors([specifications_needed])
+
+print("y = {}, neighbor_coord = {}".format(y, neighbor_coord))
+</code></pre>
+<pre><code>y = [[10.77474942]], neighbor_coord = [[22]]
+</code></pre>
+<pre><code class="language-python">cars.iloc[neighbor_coord[0]]
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>car_names</th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>22</th>
+      <td>AMC Javelin</td>
+      <td>15.2</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150</td>
+      <td>3.15</td>
+      <td>3.435</td>
+      <td>17.3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">cars
+</code></pre>
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+</style>
+<table border="1" class="dataframe">
+  
+<thead>
+    
+<tr style="text-align: right;">
+      <th></th>
+      <th>car_names</th>
+      <th>mpg</th>
+      <th>cyl</th>
+      <th>disp</th>
+      <th>hp</th>
+      <th>drat</th>
+      <th>wt</th>
+      <th>qsec</th>
+      <th>vs</th>
+      <th>am</th>
+      <th>gear</th>
+      <th>carb</th>
+    </tr>
+
+  </thead>
+
+  
+<tbody>
+    
+<tr>
+      <th>0</th>
+      <td>Mazda RX4</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.620</td>
+      <td>16.46</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>1</th>
+      <td>Mazda RX4 Wag</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>160.0</td>
+      <td>110</td>
+      <td>3.90</td>
+      <td>2.875</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>2</th>
+      <td>Datsun 710</td>
+      <td>22.8</td>
+      <td>4</td>
+      <td>108.0</td>
+      <td>93</td>
+      <td>3.85</td>
+      <td>2.320</td>
+      <td>18.61</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>3</th>
+      <td>Hornet 4 Drive</td>
+      <td>21.4</td>
+      <td>6</td>
+      <td>258.0</td>
+      <td>110</td>
+      <td>3.08</td>
+      <td>3.215</td>
+      <td>19.44</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>4</th>
+      <td>Hornet Sportabout</td>
+      <td>18.7</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>175</td>
+      <td>3.15</td>
+      <td>3.440</td>
+      <td>17.02</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>5</th>
+      <td>Valiant</td>
+      <td>18.1</td>
+      <td>6</td>
+      <td>225.0</td>
+      <td>105</td>
+      <td>2.76</td>
+      <td>3.460</td>
+      <td>20.22</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>6</th>
+      <td>Duster 360</td>
+      <td>14.3</td>
+      <td>8</td>
+      <td>360.0</td>
+      <td>245</td>
+      <td>3.21</td>
+      <td>3.570</td>
+      <td>15.84</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>7</th>
+      <td>Merc 240D</td>
+      <td>24.4</td>
+      <td>4</td>
+      <td>146.7</td>
+      <td>62</td>
+      <td>3.69</td>
+      <td>3.190</td>
+      <td>20.00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>8</th>
+      <td>Merc 230</td>
+      <td>22.8</td>
+      <td>4</td>
+      <td>140.8</td>
+      <td>95</td>
+      <td>3.92</td>
+      <td>3.150</td>
+      <td>22.90</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>9</th>
+      <td>Merc 280</td>
+      <td>19.2</td>
+      <td>6</td>
+      <td>167.6</td>
+      <td>123</td>
+      <td>3.92</td>
+      <td>3.440</td>
+      <td>18.30</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>10</th>
+      <td>Merc 280C</td>
+      <td>17.8</td>
+      <td>6</td>
+      <td>167.6</td>
+      <td>123</td>
+      <td>3.92</td>
+      <td>3.440</td>
+      <td>18.90</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>11</th>
+      <td>Merc 450SE</td>
+      <td>16.4</td>
+      <td>8</td>
+      <td>275.8</td>
+      <td>180</td>
+      <td>3.07</td>
+      <td>4.070</td>
+      <td>17.40</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+
+    
+<tr>
+      <th>12</th>
+      <td>Merc 450SL</td>
+      <td>17.3</td>
+      <td>8</td>
+      <td>275.8</td>
+      <td>180</td>
+      <td>3.07</td>
+      <td>3.730</td>
+      <td>17.60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+
+    
+<tr>
+      <th>13</th>
+      <td>Merc 450SLC</td>
+      <td>15.2</td>
+      <td>8</td>
+      <td>275.8</td>
+      <td>180</td>
+      <td>3.07</td>
+      <td>3.780</td>
+      <td>18.00</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+
+    
+<tr>
+      <th>14</th>
+      <td>Cadillac Fleetwood</td>
+      <td>10.4</td>
+      <td>8</td>
+      <td>472.0</td>
+      <td>205</td>
+      <td>2.93</td>
+      <td>5.250</td>
+      <td>17.98</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>15</th>
+      <td>Lincoln Continental</td>
+      <td>10.4</td>
+      <td>8</td>
+      <td>460.0</td>
+      <td>215</td>
+      <td>3.00</td>
+      <td>5.424</td>
+      <td>17.82</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>16</th>
+      <td>Chrysler Imperial</td>
+      <td>14.7</td>
+      <td>8</td>
+      <td>440.0</td>
+      <td>230</td>
+      <td>3.23</td>
+      <td>5.345</td>
+      <td>17.42</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>17</th>
+      <td>Fiat 128</td>
+      <td>32.4</td>
+      <td>4</td>
+      <td>78.7</td>
+      <td>66</td>
+      <td>4.08</td>
+      <td>2.200</td>
+      <td>19.47</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>18</th>
+      <td>Honda Civic</td>
+      <td>30.4</td>
+      <td>4</td>
+      <td>75.7</td>
+      <td>52</td>
+      <td>4.93</td>
+      <td>1.615</td>
+      <td>18.52</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>19</th>
+      <td>Toyota Corolla</td>
+      <td>33.9</td>
+      <td>4</td>
+      <td>71.1</td>
+      <td>65</td>
+      <td>4.22</td>
+      <td>1.835</td>
+      <td>19.90</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>20</th>
+      <td>Toyota Corona</td>
+      <td>21.5</td>
+      <td>4</td>
+      <td>120.1</td>
+      <td>97</td>
+      <td>3.70</td>
+      <td>2.465</td>
+      <td>20.01</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>21</th>
+      <td>Dodge Challenger</td>
+      <td>15.5</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150</td>
+      <td>2.76</td>
+      <td>3.520</td>
+      <td>16.87</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>22</th>
+      <td>AMC Javelin</td>
+      <td>15.2</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150</td>
+      <td>3.15</td>
+      <td>3.435</td>
+      <td>17.30</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>23</th>
+      <td>Camaro Z28</td>
+      <td>13.3</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>245</td>
+      <td>3.73</td>
+      <td>3.840</td>
+      <td>15.41</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>24</th>
+      <td>Pontiac Firebird</td>
+      <td>19.2</td>
+      <td>8</td>
+      <td>400.0</td>
+      <td>175</td>
+      <td>3.08</td>
+      <td>3.845</td>
+      <td>17.05</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>25</th>
+      <td>Fiat X1-9</td>
+      <td>27.3</td>
+      <td>4</td>
+      <td>79.0</td>
+      <td>66</td>
+      <td>4.08</td>
+      <td>1.935</td>
+      <td>18.90</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+
+    
+<tr>
+      <th>26</th>
+      <td>Porsche 914-2</td>
+      <td>26.0</td>
+      <td>4</td>
+      <td>120.3</td>
+      <td>91</td>
+      <td>4.43</td>
+      <td>2.140</td>
+      <td>16.70</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>27</th>
+      <td>Lotus Europa</td>
+      <td>30.4</td>
+      <td>4</td>
+      <td>95.1</td>
+      <td>113</td>
+      <td>3.77</td>
+      <td>1.513</td>
+      <td>16.90</td>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+
+    
+<tr>
+      <th>28</th>
+      <td>Ford Pantera L</td>
+      <td>15.8</td>
+      <td>8</td>
+      <td>351.0</td>
+      <td>264</td>
+      <td>4.22</td>
+      <td>3.170</td>
+      <td>14.50</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+
+    
+<tr>
+      <th>29</th>
+      <td>Ferrari Dino</td>
+      <td>19.7</td>
+      <td>6</td>
+      <td>145.0</td>
+      <td>175</td>
+      <td>3.62</td>
+      <td>2.770</td>
+      <td>15.50</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+
+    
+<tr>
+      <th>30</th>
+      <td>Maserati Bora</td>
+      <td>15.0</td>
+      <td>8</td>
+      <td>301.0</td>
+      <td>335</td>
+      <td>3.54</td>
+      <td>3.570</td>
+      <td>14.60</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+
+    
+<tr>
+      <th>31</th>
+      <td>Volvo 142E</td>
+      <td>21.4</td>
+      <td>4</td>
+      <td>121.0</td>
+      <td>109</td>
+      <td>4.11</td>
+      <td>2.780</td>
+      <td>18.60</td>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+</div>
+
+<pre><code class="language-python">
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="feature_engineering.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="nlp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="feature_engineering.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="nlp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
