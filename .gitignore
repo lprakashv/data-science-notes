@@ -1,9 +1,7 @@
 *~
 *.bak
 .ipynb_checkpoints
-.tox
 .DS_Store
 .vscode
 .venv*/
-_build/
 /book/

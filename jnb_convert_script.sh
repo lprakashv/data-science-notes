@@ -2,5 +2,9 @@
 
 set -euo pipefail
 
-find ./ipy-notebooks -name "*.ipynb" ! -path "*/.ipynb_checkpoints/*" \
-  -exec python3 -m pipenv run jupyter nbconvert {} --to markdown --output-dir ./markdown-book \;
+cd "$(dirname "$0")"
+export PIPENV_VENV_IN_PROJECT=1
+
+while IFS= read -r -d '' notebook; do
+  python3 -m pipenv run jupyter nbconvert "$notebook" --to markdown --output-dir ./markdown-book
+done < <(find ./ipy-notebooks -name "*.ipynb" ! -path "*/.ipynb_checkpoints/*" -print0)

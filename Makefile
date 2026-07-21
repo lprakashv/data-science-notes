@@ -6,10 +6,11 @@ build:
 	./build-book.sh
 
 run:
+	./jnb_convert_script.sh
 	$(MDBOOK) serve
 
 lint:
-	$(MDBOOK) build
+	./build-book.sh
 
 test:
 	./build-book.sh
