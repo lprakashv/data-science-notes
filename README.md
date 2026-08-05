@@ -1,49 +1,43 @@
 # Data Science Notes
 
-An mdBook of notes and examples covering NumPy, feature engineering,
+An MkDocs site of notes and examples covering NumPy, feature engineering,
 recommendation systems, natural-language processing, and neural networks.
 
 ## Development
 
-Install Python 3.11 and Pipenv for notebook conversion, then install
-[mdBook](https://github.com/rust-lang/mdBook) 0.5.4 or newer in the 0.5 release
-line:
+Install Python 3.11. The build and preview scripts create a local `.venv` and
+install or update the pinned dependencies automatically.
 
 ```sh
-export PIPENV_VENV_IN_PROJECT=1
-python3 -m pip install pipenv
-python3 -m pipenv sync
-cargo install mdbook --version 0.5.4 --locked
+./build-site.sh
 ```
 
-Build the static site:
+The output is written to `site/`. To regenerate the Markdown from the notebooks
+and open the latest site locally at
+<http://127.0.0.1:8000/data-science-notes/>, run:
 
 ```sh
-./build-book.sh
+./serve-site.sh
 ```
 
-The output is written to `book/`. For local preview, run:
+`make run` is an alias for the same local-preview workflow.
 
-```sh
-make run
-```
-
-`make lint` validates that mdBook can render the book, `make test` verifies the
+`make lint` validates that MkDocs can render the site, `make test` verifies the
 generated site entry point, and `make coverage` reports that coverage is not
 applicable to this static Markdown site.
 
 ## Publishing
 
-Pushing to `main` runs the GitHub Actions workflow, which installs the notebook
-conversion dependencies, regenerates the Markdown with `./build-book.sh`, and
-publishes `book/` to the `gh-pages` branch. In the repository's GitHub Pages
-settings, select **Deploy from a branch** and use the `gh-pages` branch with the
-`/(root)` folder.
+Pushing to `main` runs the GitHub Actions workflow, which uses
+`./build-site.sh` to install dependencies, regenerate the Markdown, and publish
+`site/` to the `gh-pages` branch. In the repository's GitHub Pages settings,
+select **Deploy from a branch** and use the `gh-pages` branch with the `/(root)`
+folder.
 
 ## Updating content
 
 The notebooks and their adjacent datasets in `ipy-notebooks/` are the primary
-source files. Update them first, then run `./build-book.sh` to regenerate the
+source files. Update them first, then run `./build-site.sh` to regenerate the
 Markdown in `markdown-book/` and render the site. Avoid editing generated
 chapter Markdown directly.
 

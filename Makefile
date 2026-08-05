@@ -1,20 +1,17 @@
-MDBOOK ?= mdbook
-
 .PHONY: build run lint test coverage
 
 build:
-	./build-book.sh
+	./build-site.sh
 
 run:
-	./jnb_convert_script.sh
-	$(MDBOOK) serve
+	./serve-site.sh
 
 lint:
-	./build-book.sh
+	./build-site.sh
 
 test:
-	./build-book.sh
-	test -f book/index.html
+	./build-site.sh
+	test -f site/index.html
 
 coverage:
-	@echo "Coverage is not applicable: this repository contains a static Markdown book."
+	@echo "Coverage is not applicable: this repository contains a static documentation site."

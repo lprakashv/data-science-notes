@@ -24,7 +24,7 @@ Purpose: to find and recommend items that a user is most likely to be interested
 | user E | place 1 | 8 |
 | user F | place 1 | 7 |
 | user G | place 1 | 10 |
-| | ![](https://cdnjs.cloudflare.com/ajax/libs/fontisto/3.0.4/icons/directional/arrow-down.png) | |
+| | ↓ | |
 
 | place   | rating count |
 |:-------:|:------------:|

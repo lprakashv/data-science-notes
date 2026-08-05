@@ -1,0 +1,26 @@
+site_name: Lalit's AI / ML Notebook
+site_description: Notes and examples for data science, machine learning, and AI.
+site_author: Lalit Prakash Vatsal
+site_url: https://lprakashv.github.io/data-science-notes/
+repo_name: lprakashv/data-science-notes
+repo_url: https://github.com/lprakashv/data-science-notes
+docs_dir: markdown-book
+site_dir: site
+
+theme:
+  name: terminal
+  custom_dir: theme_overrides
+
+nav:
+  - Home: index.md
+  - NumPy:
+      - Introduction to NumPy: numpy_intro.md
+  - Feature Engineering:
+      - Feature Engineering: feature_engineering.md
+  - Recommendation Systems:
+      - Recommendation: recommendation.md
+  - Natural Language Processing:
+      - Natural Language Processing: nlp.md
+      - Advanced NLP: advanced_nlp.md
+  - Deep Learning:
+      - Neural Networks: deep_learning_apps.md
