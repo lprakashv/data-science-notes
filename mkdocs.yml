@@ -6,21 +6,30 @@ repo_name: lprakashv/data-science-notes
 repo_url: https://github.com/lprakashv/data-science-notes
 docs_dir: markdown-book
 site_dir: site
+exclude_docs: |
+  notebooks/**/*.csv
+  notebooks/**/*.tsv
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      ignore_h1_titles: true
 
 theme:
-  name: terminal
+  name: shadcn
   custom_dir: theme_overrides
 
 nav:
   - Home: index.md
   - NumPy:
-      - Introduction to NumPy: numpy_intro.md
+      - Introduction to NumPy: notebooks/numpy/numpy_intro.ipynb
   - Feature Engineering:
-      - Feature Engineering: feature_engineering.md
+      - Feature Engineering: notebooks/feature_engineering/feature_engineering.ipynb
   - Recommendation Systems:
-      - Recommendation: recommendation.md
+      - Recommendation: notebooks/recommender/recommendation.ipynb
   - Natural Language Processing:
-      - Natural Language Processing: nlp.md
-      - Advanced NLP: advanced_nlp.md
+      - Natural Language Processing: notebooks/nlp/nlp.ipynb
+      - Advanced NLP: notebooks/nlp/advanced_nlp.ipynb
   - Deep Learning:
-      - Neural Networks: deep_learning_apps.md
+      - Neural Networks: notebooks/deep_learning/deep_learning_apps.ipynb

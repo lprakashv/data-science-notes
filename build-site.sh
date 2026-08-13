@@ -21,8 +21,4 @@ if [[ ! -f "$requirements_marker" || requirements.txt -nt "$requirements_marker"
   touch "$requirements_marker"
 fi
 
-while IFS= read -r -d '' notebook; do
-  "$venv_python" -m jupyter nbconvert "$notebook" --to markdown --output-dir ./markdown-book
-done < <(find ./ipy-notebooks -name "*.ipynb" ! -path "*/.ipynb_checkpoints/*" -print0)
-
 "$venv_python" -m mkdocs build --strict

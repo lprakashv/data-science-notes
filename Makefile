@@ -6,11 +6,9 @@ build:
 run:
 	./serve-site.sh
 
-lint:
-	./build-site.sh
+lint: build
 
-test:
-	./build-site.sh
+test: build
 	test -f site/index.html
 
 coverage:
