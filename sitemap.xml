@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lprakashv.github.io/data-science-notes/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/advanced_nlp/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/deep_learning/deep_learning_apps/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/deep_learning_apps/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/feature_engineering/feature_engineering/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/feature_engineering/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/nlp/advanced_nlp/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/nlp/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/nlp/nlp/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/numpy_intro/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/numpy/numpy_intro/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
     <url>
-         <loc>https://lprakashv.github.io/data-science-notes/recommendation/</loc>
-         <lastmod>2026-08-05</lastmod>
+         <loc>https://lprakashv.github.io/data-science-notes/notebooks/recommender/recommendation/</loc>
+         <lastmod>2026-08-13</lastmod>
     </url>
 </urlset>
