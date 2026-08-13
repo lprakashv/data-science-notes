@@ -1,0 +1,42 @@
+README.md
+  s_a3d407cce27816::t_dbd1bc1f192f2b 40-43,45-46
+  s_74eb2c2c23525a::t_45c2532c862a05 3-5
+  s_a3d407cce27816::t_5ae6b262de974f 16-17,28,33
+.gitignore
+  s_a3d407cce27816::t_dbd1bc1f192f2b 7
+serve-site.sh
+  s_a3d407cce27816::t_dbd1bc1f192f2b 9
+requirements.txt
+  s_74eb2c2c23525a::t_45c2532c862a05 2
+  s_a3d407cce27816::t_dbd1bc1f192f2b 3
+Makefile
+  s_a3d407cce27816::t_5c983ae9396bb7 9,11
+mkdocs.yml
+  s_a3d407cce27816::t_dbd1bc1f192f2b 9-16,26,28,30,32-33,35
+  s_74eb2c2c23525a::t_45c2532c862a05 20
+  s_a3d407cce27816::t_5c983ae9396bb7 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "708000699109561e88f1cefd6b86e38df94b3937",
+  "prompts": {},
+  "sessions": {
+    "s_74eb2c2c23525a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffc70-9112-7000-9689-96a86bba7440",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Lalit Vatsal <lprakashv@gmail.com>"
+    },
+    "s_a3d407cce27816": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ffc62-e205-7bc3-b0be-274130c77d8f",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Lalit Vatsal <lprakashv@gmail.com>"
+    }
+  }
+}
