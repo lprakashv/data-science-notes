@@ -1,0 +1,24 @@
+README.md
+  s_f125d024dc94cd::t_42db0838186da2 6-13,48-50
+  s_f125d024dc94cd::t_ab3cfe4c630f5b 51
+book/index.md
+  s_f125d024dc94cd::t_42db0838186da2 5-13
+AGENTS.md
+  s_f125d024dc94cd::t_42db0838186da2 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "a4e70b8a266ae1d4fbd80c5c54f49e6710b65720",
+  "prompts": {},
+  "sessions": {
+    "s_f125d024dc94cd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fff1b-60e6-7c53-8dc3-bd5cd24554db",
+        "model": "gpt-5.6-terra"
+      },
+      "human_author": "Lalit Vatsal <lprakashv@gmail.com>"
+    }
+  }
+}
