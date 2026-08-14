@@ -16,6 +16,12 @@ plugins:
       execute: false
       ignore_h1_titles: true
 
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - fenced_code
+
 theme:
   name: shadcn
   custom_dir: theme_overrides
