@@ -1,46 +1,41 @@
 # Data Science Notes
 
-An MkDocs site using the Shadcn theme, with notes and examples covering NumPy,
-feature engineering, recommendation systems, natural-language processing, and
-neural networks.
+The site is built with MkDocs using the `mkdocs-shadcn` theme. It collects notes
+and examples on practical data science, machine learning, and AI.
 
-## Development
+## Local development
 
-Install Python 3.11. The build and preview scripts create a local `.venv` and
-install or update the pinned dependencies automatically.
+Build and validate the static site. The script creates `.venv/` and installs
+the pinned dependencies when needed:
 
-```sh
-./build-site.sh
+```bash
+bash ./build-local.sh build
 ```
 
-The output is written to `site/`. To render the notebooks and open the latest
-site locally at
-<http://127.0.0.1:8000/data-science-notes/>, run:
+Preview the site locally with live reload; the browser opens automatically:
 
-```sh
-./serve-site.sh
+```bash
+bash ./build-local.sh serve
 ```
 
-`make run` is an alias for the same local-preview workflow.
+The generated site is written to `site/`. The script installs from PyPI by
+default; set `MKDOCS_PIP_INDEX_URL` to use a different Python package index.
 
-`make lint` validates that MkDocs can render the site, `make test` verifies the
-generated site entry point, and `make coverage` reports that coverage is not
-applicable to this static documentation site.
+`make build`, `make lint`, and `make test` all perform the strict build;
+`make test` additionally verifies the generated entry point. `make coverage`
+reports that coverage is not applicable to this static documentation site.
 
-## Publishing
+## Deployment
 
-Pushing to `main` runs the GitHub Actions workflow, which uses
-`./build-site.sh` to install dependencies, render the notebooks, and publish
-`site/` to the `gh-pages` branch. In the repository's GitHub Pages settings,
-select **Deploy from a branch** and use the `gh-pages` branch with the `/(root)`
-folder.
+Pushing to `main` runs the GitHub Actions workflow, which runs the same strict
+build and publishes `site/` to the `gh-pages` branch. Configure GitHub Pages to
+deploy from the root of that branch.
 
 ## Updating content
 
-The notebooks and their adjacent datasets in `markdown-book/notebooks/` are the
-primary source files. `mkdocs-jupyter` renders their saved outputs directly;
-the build never executes notebook cells. Update a notebook, then run
-`./build-site.sh` to render the site.
+The notebooks and their adjacent datasets in `book/notebooks/` are the primary
+source files. `mkdocs-jupyter` renders their saved outputs without executing
+notebook cells. Update a notebook, then run `bash ./build-local.sh build`.
 
-`markdown-book/notebooks/feature_engineering/feature_engineering.ipynb` is the
-retained template for the currently empty Feature Engineering chapter.
+`book/notebooks/feature_engineering/feature_engineering.ipynb` is the retained
+template for the currently empty Feature Engineering chapter.

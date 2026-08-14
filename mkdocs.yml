@@ -4,8 +4,10 @@ site_author: Lalit Prakash Vatsal
 site_url: https://lprakashv.github.io/data-science-notes/
 repo_name: lprakashv/data-science-notes
 repo_url: https://github.com/lprakashv/data-science-notes
-docs_dir: markdown-book
+edit_uri: edit/main/book/
+docs_dir: book
 site_dir: site
+strict: true
 exclude_docs: |
   notebooks/**/*.csv
   notebooks/**/*.tsv
@@ -24,7 +26,6 @@ markdown_extensions:
 
 theme:
   name: shadcn
-  custom_dir: theme_overrides
 
 nav:
   - Home: index.md

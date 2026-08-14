@@ -1,8 +1,10 @@
-*~
-*.bak
-.ipynb_checkpoints
+.idea/
+logs/
+.vscode/
+.metals/
 .DS_Store
-.vscode
-.venv*/
-/.cache/
-/site/
+.venv/
+site/
+.obsidian/
+.ipynb_checkpoints/
+.cache/

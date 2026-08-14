@@ -25,7 +25,7 @@ jobs:
           python-version: "3.11"
 
       - name: Build the site
-        run: ./build-site.sh
+        run: bash ./build-local.sh build
 
       - name: Publish to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

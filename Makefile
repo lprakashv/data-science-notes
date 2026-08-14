@@ -1,14 +1,16 @@
 .PHONY: build run lint test coverage
 
 build:
-	./build-site.sh
+	bash ./build-local.sh build
 
 run:
-	./serve-site.sh
+	bash ./build-local.sh serve
 
-lint: build
+lint:
+	bash ./build-local.sh build
 
-test: build
+test:
+	bash ./build-local.sh build
 	test -f site/index.html
 
 coverage:
