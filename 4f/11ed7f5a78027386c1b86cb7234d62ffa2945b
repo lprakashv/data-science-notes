@@ -1,0 +1,14 @@
+mkdocs.yml
+  h_18b81770ccc008 19-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "4f11ed7f5a78027386c1b86cb7234d62ffa2945b",
+  "prompts": {},
+  "humans": {
+    "h_18b81770ccc008": {
+      "author": "Lalit Vatsal <lprakashv@gmail.com>"
+    }
+  }
+}
